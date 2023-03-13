@@ -8,11 +8,12 @@ describe('Square class',() => {
         })
     })
     describe('Text Length', () => {
-        it('should throe error if text is more than 3 or less than 1', () => {
-          const newSquare = new Square(york, red, green);
-          const err = new Error('Text must be three characters or less.')
-            
-          expect(result).toEqual(false);
+        it('should throw error if text is more than 3 characters or less than one character long', () => {
+          const newSquare = new Square();
+          newSquare.text = "york";
+          const err = new Error('Text must be at least one character long and three characters long maximum.');
+          expect(newSquare).toThrowError(err);
         });
-      });*/
+      });
+      //npm run test
 })
