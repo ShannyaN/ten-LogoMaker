@@ -4,8 +4,8 @@
     "dom-to-svg": "^0.12.2",
     "inquirer": "^8.2.4"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.21",
-    "nodeom": "^0.0.1"
-  }
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
 }
