@@ -59,7 +59,7 @@ inquirer
     ])
 //with data input-do the following
 .then ((response)=> {
-    if (3<response.text.length <1){
+    if (response.text.length < 1 || response.text>3){
         throw new Error("Text must be at least one character long and three characters long maximum.");
         return;}
     if (!((isColor(response.textcolor)) && (hexCheck(response.textcolor)))){

@@ -8,12 +8,30 @@ describe('Square class',() => {
         })
     })
     // describe('Text Length', () => {
-    //     it('should throw error if text is more than 3 characters or less than one character long', () => {
-    //       const newSquare = new Square();
-    //       newSquare.text = "york";
+    //     it('Text must be at least one character long and three characters long maximum.', () => {
+    //       const newSquare = new Square("york");
+    //       //newSquare.text = "york";
     //       const err = new Error('Text must be at least one character long and three characters long maximum.');
     //       expect(newSquare).toThrowError(err);
     //     });
     //   });
+    describe('Square class', () => {
+      it("Should be an instance of Square", () => {
+        const newSquare = new Square ("text","red","red");
+        expect(newSquare.text).toBe("text");
+      })
+    describe('Square class', () => {
+      it("Should be an instance of Square", () => {
+        const newSquare = new Square ("text","red","red");
+        expect(newSquare.textcolor).toBe("red");
+      })
+    })
+    describe('Square class', () => {
+      it("Should be an instance of Square", () => {
+        const newSquare = new Square ("text","red","blue");
+        expect(newSquare.shapecolor).toBe("blue");
+      })
+    })
       //npm run test
+  })
 })
