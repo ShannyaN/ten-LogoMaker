@@ -4,18 +4,17 @@ const Square = require('./lib/square')
 const Triangle = require('./lib/triangle')
 const Circle = require('./lib/circle')
 const fs =require('fs');
-const classID ="";
 
-function isColor(strColor){
-    var s = new Option().style;
-    s.color = strColor;
-    return s.color == strColor;
-  }
-  function hexCheck(colorCode){
-    var re = /[0-9A-Fa-f]{6}/g;
-    console.log(re.test(colorCode));
-    re.lastIndex = 0;
-}
+// function isColor(strColor){
+//     var s = new Option().style;
+//     s.color = strColor;
+//     return s.color == strColor;
+//   }
+//   function hexCheck(colorCode){
+//     var re = /[0-9A-Fa-f]{6}/g;
+//     console.log(re.test(colorCode));
+//     re.lastIndex = 0;
+// }
 
 function render({shapecolor, text, textcolor, line}){
     const svgFile = `<svg version="1.1"
@@ -62,7 +61,7 @@ inquirer
     if (response.text.length < 1 || response.text>3){
         throw new Error("Text must be at least one character long and three characters long maximum.");
         return;}
-    if (!((isColor(response.textcolor)) && (hexCheck(response.textcolor)))){
+    if (CSS.supports(`color': ${response.textcolor}`)){
         throw new Error("Must enter a legitamite color name or hexadecimal number.");
         return;}
     if (!((isColor(response.shapecolor)) && (hexCheck(response.shapecolor)))){
@@ -77,12 +76,7 @@ inquirer
     } else{
         logo = new Circle(response.text, response.textcolor, response.shapecolor);
     }
-     //const logo = new classID(response.text, response.textcolor, response.shape, response.shapecolor);
-    //Logo2.render(logo);
-    //console.log(logo)
     render(logo);
     return logo;
-    //console.log(response);
-//fileWrite(response)
 })
 
