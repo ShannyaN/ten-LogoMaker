@@ -6,6 +6,17 @@ const Circle = require('./lib/circle')
 const fs =require('fs');
 const classID ="";
 
+function isColor(strColor){
+    var s = new Option().style;
+    s.color = strColor;
+    return s.color == strColor;
+  }
+  function hexCheck(colorCode){
+    var re = /[0-9A-Fa-f]{6}/g;
+    console.log(re.test(colorCode));
+    re.lastIndex = 0;
+}
+
 function render({shapecolor, text, textcolor, line}){
     const svgFile = `<svg version="1.1"
     width="300" height="200"
@@ -48,6 +59,15 @@ inquirer
     ])
 //with data input-do the following
 .then ((response)=> {
+    if (3<response.text.length <1){
+        throw new Error("Text must be at least one character long and three characters long maximum.");
+        return;}
+    if (!((isColor(response.textcolor)) && (hexCheck(response.textcolor)))){
+        throw new Error("Must enter a legitamite color name or hexadecimal number.");
+        return;}
+    if (!((isColor(response.shapecolor)) && (hexCheck(response.shapecolor)))){
+        throw new Error("Must enter a legitamite color name or hexadecimal number.");
+        return;}
     const shapeID = response.shape;
     let logo;
     if (shapeID=="square"){
