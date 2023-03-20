@@ -37,6 +37,13 @@ describe('Square class',() => {
           expect(()=>newSquare.setText("york")).toThrow(err);
       });
     });
+    describe('Text Length', () => {
+      it('Text must be at least one character long and three characters long maximum.', () => {
+        const newSquare = new Square();
+        const err = new Error("Text must be at least one character long and three characters long maximum.");
+        expect(()=>newSquare.setText("")).toThrow(err);
+    });
+  });
   });
   describe('Color Validation', () => {
     describe('Shape Color Validation', () => {
