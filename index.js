@@ -4,7 +4,6 @@ const Square = require('./lib/square')
 const Triangle = require('./lib/triangle')
 const Circle = require('./lib/circle')
 const fs =require('fs');
-var validateColor = require("validate-color").default;
 
 function render({shapecolor, text, textcolor, line}){
     const svgFile = `<svg version="1.1"
@@ -48,14 +47,6 @@ inquirer
     ])
 //with data input-do the following
 .then ((response)=> {
-    console.log(validateColor("red"))
-    console.log(validateColor("gi"))
-    // if (CSS.supports(`'color': ${response.textcolor}`)){
-    //     throw new Error("Must enter a legitamite color name or hexadecimal number.");
-    //     return;}
-    // if (!((isColor(response.shapecolor)) && (hexCheck(response.shapecolor)))){
-    //     throw new Error("Must enter a legitamite color name or hexadecimal number.");
-    //     return;}
     const shapeID = response.shape;
     let logo;
     if (shapeID=="square"){
