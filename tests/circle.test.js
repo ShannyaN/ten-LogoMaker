@@ -1,82 +1,82 @@
-const Square = require('../lib/square.js');
+const Circle = require('../lib/circle.js');
 
-describe('Square class',() => {
-    describe('Square class', () => {
-        it("Should be an instance of Square", () => {
-            const newSquare = new Square(); 
-            expect(newSquare).toBeInstanceOf(Square);
+describe('Circle class',() => {
+    describe('Circle class', () => {
+        it("Should be an instance of Circle", () => {
+            const newCircle = new Circle(); 
+            expect(newCircle).toBeInstanceOf(Circle);
         })
     })
-    describe('Square class', () => {
-      it("Should be an instance of Square", () => {
-        const newSquare = new Square ("svg","red","red");
-        expect(newSquare.text).toBe("svg");
+    describe('Circle class', () => {
+      it("Should be an instance of Circle", () => {
+        const newCircle = new Circle ("svg","red","red");
+        expect(newCircle.text).toBe("svg");
       })
-    describe('Square class', () => {
-      it("Should be an instance of Square", () => {
-        const newSquare = new Square ("svg","red","red");
-        expect(newSquare.textcolor).toBe("red");
-      })
-    })
-    describe('Square class', () => {
-      it("Should be an instance of Square", () => {
-        const newSquare = new Square ("svg","red","red");
-        expect(newSquare.shape).toBe("square");
+    describe('Circle class', () => {
+      it("Should be an instance of Circle", () => {
+        const newCircle = new Circle ("svg","red","red");
+        expect(newCircle.textcolor).toBe("red");
       })
     })
-    describe('Square class', () => {
-      it("Should be an instance of Square", () => {
-        const newSquare = new Square ("svg","red","blue");
-        expect(newSquare.shapecolor).toBe("blue");
+    describe('Circle class', () => {
+      it("Should be an instance of Circle", () => {
+        const newCircle = new Circle ("svg","red","red");
+        expect(newCircle.shape).toBe("circle");
       })
     })
-      describe('Square Class', () => {
+    describe('Circle class', () => {
+      it("Should be an instance of Circle", () => {
+        const newCircle = new Circle ("svg","red","blue");
+        expect(newCircle.shapecolor).toBe("blue");
+      })
+    })
+      describe('Circle Class', () => {
         it('Text must be at least one character long and three characters long maximum.', () => {
-          const newSquare = new Square();
+          const newCircle = new Circle();
           const err = new Error("Text must be at least one character long and three characters long maximum.");
-          expect(()=>newSquare.setText("york")).toThrow(err);
+          expect(()=>newCircle.setText("york")).toThrow(err);
       });
     });
     describe('Color Validation', () => {
       it('Should throw an error if the text color is not a valid color keyword or hexadecimal number.', () => {
-        const newSquare = new Square();
+        const newCircle = new Circle();
         const err = new Error("Colors must be a valid color keyword or hexadecimal number.");
-        expect(()=>newSquare.colorShapeVal("red")).not.toThrow(err);
+        expect(()=>newCircle.colorShapeVal("red")).not.toThrow(err);
        });
       });
     describe('Color Validation', () => {
       it('Should throw an error if the text color is not a valid color keyword or hexadecimal number.', () => {
-        const newSquare = new Square();
+        const newCircle = new Circle();
         const err = new Error("Colors must be a valid color keyword or hexadecimal number.");
-        expect(()=>newSquare.colorShapeVal("111111")).not.toThrow(err);
+        expect(()=>newCircle.colorShapeVal("111111")).not.toThrow(err);
         });
       });
     describe('Color Validation', () => {
       it('Should throw an error if the text color is not a valid color keyword or hexadecimal number.', () => {
-        const newSquare = new Square();
+        const newCircle = new Circle();
         const err = new Error("Colors must be a valid color keyword or hexadecimal number.");
-        expect(()=>newSquare.colorShapeVal("k")).toThrow(err);
+        expect(()=>newCircle.colorShapeVal("k")).toThrow(err);
         });
        });
        describe('Color Validation', () => {
         it('Should throw an error if the text color is not a valid color keyword or hexadecimal number', () => {
-          const newSquare = new Square();
+          const newCircle = new Circle();
           const err = new Error("Colors must be a valid color keyword or hexadecimal number.");
-          expect(()=>newSquare.colorTextVal("green")).not.toThrow(err);
+          expect(()=>newCircle.colorTextVal("green")).not.toThrow(err);
          });
         });
       describe('Color Validation', () => {
         it('Should throw an error if the text color is not a valid color keyword or hexadecimal number', () => {
-          const newSquare = new Square();
+          const newCircle = new Circle();
           const err = new Error("Colors must be a valid color keyword or hexadecimal number.");
-          expect(()=>newSquare.colorTextVal("0000FF")).not.toThrow(err);
+          expect(()=>newCircle.colorTextVal("0000FF")).not.toThrow(err);
           });
         });
       describe('Color Validation', () => {
         it('Should throw an error if the text color is not a valid color keyword or hexadecimal number.', () => {
-          const newSquare = new Square();
+          const newCircle = new Circle();
           const err = new Error("Colors must be a valid color keyword or hexadecimal number.");
-          expect(()=>newSquare.colorTextVal("0")).toThrow(err);
+          expect(()=>newCircle.colorTextVal("0")).toThrow(err);
       });
     });
   })
